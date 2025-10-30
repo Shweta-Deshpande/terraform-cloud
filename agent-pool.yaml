@@ -1,0 +1,21 @@
+apiVersion: app.terraform.io/v1alpha2
+kind: AgentPool
+metadata:
+  name: parser
+spec:
+  name: parser
+  organization: hcp-terraform-operator
+  token:
+    secretKeyRef:
+      name: hcp-terraform-operator
+      key: tfe-token
+  agentTokens:
+  - name: token
+  autoscaling:
+    maxReplicas: 3
+    minReplicas: 0
+    cooldownPeriod:
+      scaleUpSeconds: 15
+      scaleDownSeconds: 15
+  agentDeployment:
+    replicas: 0
