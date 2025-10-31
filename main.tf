@@ -14,7 +14,7 @@ terraform {
   }
 }
 resource "random_integer" "number" {
-  min = 1
+  min = 5
   max = 10000
 }
 resource "local_file" "hello_file" {
@@ -36,5 +36,4 @@ EOT
 output "delay_result" {
   value = data.external.slow_delay.result
 }
-
 

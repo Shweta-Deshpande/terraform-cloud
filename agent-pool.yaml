@@ -1,9 +1,9 @@
 apiVersion: app.terraform.io/v1alpha2
 kind: AgentPool
 metadata:
-  name: shwe-agent-pool-2
+  name: shwe-agent-pool-27
 spec:
-  name: shwe-agent-pool-2
+  name: shwe-agent-pool-27
   organization: hcp-terraform-operator
   token:
     secretKeyRef:
