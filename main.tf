@@ -15,7 +15,7 @@ terraform {
 }
 resource "random_integer" "number" {
   min = 122
-  max = 10000
+  max = 1000000
 }
 resource "local_file" "hello_file" {
   filename = "hello.txt"
