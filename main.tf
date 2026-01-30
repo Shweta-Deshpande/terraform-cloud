@@ -21,3 +21,20 @@ resource "local_file" "hello_file" {
   filename = "hello.txt"
   content  = "Random number: ${random_integer.number.result}"
 }
+
+resource "null_resource" "test19" {
+}
+
+data "external" "slow_delay" {
+  program = ["bash", "-c", <<EOT
+    sleep 60
+    echo '{ "result": "done" }'
+EOT
+  ]
+}
+
+output "delay_result" {
+  value = data.external.slow_delay.result
+}
+
+
