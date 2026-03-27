@@ -18,7 +18,7 @@ resource "random_integer" "number" {
   max = 10000
 }
 resource "local_file" "hello_file" {
-  filename = "hello.txt"
+  filename = "hellohello.txt"
   content  = "Random number: ${random_integer.number.result}"
 }
 
