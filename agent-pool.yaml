@@ -1,0 +1,21 @@
+apiVersion: app.terraform.io/v1alpha2
+kind: AgentPool
+metadata:
+  name: shwe-agent-pool-2
+spec:
+  name: shwe-agent-pool-2
+  organization: hcp-terraform-operator
+  token:
+    secretKeyRef:
+      name: hcp-terraform-operator
+      key: tfe-token
+  agentTokens:
+  - name: shwe-token-2
+  autoscaling:
+    maxReplicas: 5
+    minReplicas: 0
+    cooldownPeriod:
+      scaleUpSeconds: 15
+      scaleDownSeconds: 15
+  agentDeployment:
+    replicas: 0

@@ -13,6 +13,9 @@ resource "local_file" "hello_file" {
 resource "null_resource" "test19" {
 }
 
+resource "null_resource" "test20" {
+}
+
 data "external" "slow_delay" {
   program = ["bash", "-c", <<EOT
     sleep 60
